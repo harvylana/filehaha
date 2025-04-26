@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head> <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>FINALS PROJECT</title>
+</head>
+<body> 
+<script>
+
+let text = "";
+let answer = [];
+let aAnswer = [1,3,2,4,5];
+
+let attempt = 3;
+
+
+alert("Instruction :" + "\n" +
+"Find the correct order of numbers 1 to 5" + "\n" + 
+"Input the number one by one" + "\n" +
+"Hint : No numbers repeated");
+
+
+
+
+for(let x = 1; x <= attempt ; attempt--){
+    for(let y = 1; y <= 5 ; y++ ){
+          
+let ans = parseInt(prompt("Remaining Attempts : " + attempt + "\n" +
+        "Your Answer : " + answer + "\n" + 
+        "number order " + y + ":"  ));
+        answer[y-1] = ans;
+    }
+    
+    
+    let correctCount = 0;
+
+      for (let x = 0; x < aAnswer.length; x++) {
+      if (aAnswer[x] === answer[x]) {
+        correctCount++;
+    }
+  }
+    
+    
+    if(answer.toString()== aAnswer.toString()){
+      alert("Your Answer : " + answer + "\n" +
+      "Correct! You have guessed it all! ")
+      break;
+      
+      
+    }
+    else if(attempt > 1){
+    alert("Your Answer : " + answer + "\n" +
+    "\n" +
+    (attempt - 1) + " attempt/s left" + "\n" +
+    "Correct answers guessed : " + correctCount + "\n" + "\n" +
+    "Wrong! Try Again.");
+    answer.length = [];
+    }
+    else{
+    alert("Your Answer : " + answer + "\n" + 
+    "\n" +
+    (attempt - 1) + " attempt/s left" + "\n" +
+    "Correct answers guessed : " + correctCount + "\n" + "\n" +
+    "Definitely Wrong!!!!");
+    } 
+} 
+alert("Game Over!")
+
+
+</script>
+</body>
+</html>
